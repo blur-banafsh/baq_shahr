@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منوی رستوران سنتی</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nika:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'menu' %}">باغ شهر</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+
+
+
+                        {% for i in all %}
+                        <li class="nav-item">
+                            <a class="nav-link " href="{% url 'gallery-menu' i.id %}">{{ i.name }}</a>
+                        </li>
+
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="hero-section text-center d-flex align-items-center justify-content-center" style="background-image: url('/static/images/54336454.jpg') ">
+
+            <div class="hero-content" >
+                <h1>به منوی رستوران ما خوش آمدید</h1>
+                <p class="lead">تجربه‌ای بی‌نظیر از طعم‌های اصیل ایرانی</p>
+                <a href="{% url 'menu' %}" class="btn btn-primary hero-btn smooth-scroll">مشاهده منو <i
+                        class="fas fa-chevron-down ms-2"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container py-5">
+
+{% for i in all %}
+
+        <section id="{{ i.name }}" class="menu-category py-5">
+
+            <h2 class="section-title text-center mb-5 fade-in-up">{{ i.name }}</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {% for j in i.gallery_set.all %}
+
+                <div class="col menu-item hidden">
+                    <div class="card h-100 menu-card">
+                        <img src="{{ j.image.url }}"
+                            class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ j.cat.name }}</h5>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 {% endfor %}
+
+            </div>
+
+        </section>
+{% endfor %}
+
+
+        <section id="contact" class="contact-section text-center py-5">
+            <h2 class="section-title mb-4 fade-in-up">تماس با ما</h2>
+            <p class="lead">برای سفارش و اطلاعات بیشتر با ما در تماس باشید:</p>
+            <div class="contact-info">
+                <p><i class="fas fa-phone-alt"></i> ۰۲۱-۱۲۳۴۵۶۷۸</p>
+                <p><i class="fas fa-map-marker-alt"></i> تهران، خیابان اصلی، پلاک ۱۲</p>
+                <p><i class="fas fa-envelope"></i> info@iranianrestaurant.com</p>
+            </div>
+            <div class="social-icons mt-4">
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-telegram-plane"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer py-4 text-center">
+        <p>&copy; 2025 رستوران باغ شهر. تمامی حقوق محفوظ است.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/script.js"></script>
+</body>
+
+</html>
