@@ -1,0 +1,77 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.mo
+*.sqlite3
+db.sqlite3
+
+# Ignore Django migrations (optional: useful for initial dev)
+**/migrations/
+!**/migrations/__init__.py
+
+# Media and static files (if collected/generated)
+media/
+staticfiles/
+static/
+
+# Local env & IDE configs
+.env
+*.env
+.venv/
+venv/
+ENV/
+env/
+.idea/
+.vscode/
+*.swp
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Python virtualenvs
+pip-wheel-metadata/
+pip-log.txt
+
+# Coverage / test reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+coverage.xml
+.cache
+.pytest_cache/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# MyPy, Pyright, Pylint, etc.
+.mypy_cache/
+.pyre/
+.pytype/
+.pylint.d/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Gunicorn / Supervisor
+gunicorn.pid
+
+# VS Code settings (optional)
+
+# JetBrains IDEs (e.g., PyCharm)
