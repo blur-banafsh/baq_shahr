@@ -129,7 +129,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = "account.User"
-CORS_ALLOWED_ORIGINS = ['http://171.22.25.224', 'http://127.0.0.1:8000']
+CORS_ALLOWED_ORIGINS = ['https://baqeshahr.ir', 'http://127.0.0.1:8000']
 CORS_ALLOW_ALL_ORIGINS = True
-CSRF_TRUSTED_ORIGINS = ['http://171.22.25.224', 'http://127.0.0.1:8000']
+CSRF_TRUSTED_ORIGINS = ['https://baqeshahr.ir', 'http://127.0.0.1:8000']
 # SECURE_SSL_REDIRECT = False
