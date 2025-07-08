@@ -132,4 +132,4 @@ AUTH_USER_MODEL = "account.User"
 CORS_ALLOWED_ORIGINS = ['https://baqeshahr.ir', 'http://127.0.0.1:8000']
 CORS_ALLOW_ALL_ORIGINS = True
 CSRF_TRUSTED_ORIGINS = ['https://baqeshahr.ir', 'http://127.0.0.1:8000']
-# SECURE_SSL_REDIRECT = False
+SECURE_SSL_REDIRECT = False
